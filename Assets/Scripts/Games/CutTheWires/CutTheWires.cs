@@ -7,7 +7,6 @@ using UnityEngine;
 public class CutTheWires : MonoBehaviour
 {
     [SerializeField] private Color[] wires = new Color[6];
-    [SerializeField] private List<Color> wiresOrder = new List<Color>();
 
     [SerializeField] private TextMeshProUGUI[] colorsTexts = new TextMeshProUGUI[6]; //Needs to stay
 
@@ -15,6 +14,13 @@ public class CutTheWires : MonoBehaviour
     {Color.grey, Color.blue, Color.red, Color.yellow, Color.magenta, Color.white};
 
     private int wiresCut = 0;
+
+    private GameManager _gameManager;
+
+    void Awake()
+    {
+        _gameManager = FindObjectOfType<GameManager>();
+    }
 
     private void Start() {
         InitiateGame();
@@ -26,14 +32,13 @@ public class CutTheWires : MonoBehaviour
         foreach(Transform wire in gameObject.transform)
         {
             if(wire.CompareTag("Wire")){
-                for(int i=0; i<6; i++)
+                for(int i=0; i<100; i++)
                 {
-                int randomIndex = Random.Range(0, 6);
+                int randomIndex = Random.Range(0, wires.Length);
                 if(wires[randomIndex]==Color.green){
                     Color randomColor = GetRandomColor();
                     wires[randomIndex] = randomColor;
                     wire.GetComponent<UnityEngine.UI.Image>().color = randomColor;
-                    //SetText(randomIndex, randomColor);
                     break;
                 }
                 }
@@ -105,7 +110,16 @@ public class CutTheWires : MonoBehaviour
             //Sound.PlayOneShot(success);
         }
         else{
-            Debug.Log("You failed!");
+            _gameManager.OnLose();
         }
+        if(wiresCut == wires.Length)
+        {
+            GetComponent<Animator>().SetTrigger("gameWon");
+        }
+    }
+
+    public void OnWin()
+    {
+        _gameManager.OnWin();
     }
 }

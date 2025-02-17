@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class Wires : MonoBehaviour
 {
-    //[SerializeField] Sprite wireCut;
+    [SerializeField] Sprite wireCut;
     private CutTheWires parent;
     private Image image;
 
@@ -20,7 +20,7 @@ public class Wires : MonoBehaviour
 
     public void OnCut(){
         parent.OnWireCut(image.color);
-        //image.sprite = wireCut;
+        image.sprite = wireCut;
         GetComponent<Button>().enabled = false;
     }
 }

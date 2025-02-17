@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 /// <summary>
@@ -10,6 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject[] gameTypes;
     [SerializeField] private GameObject canvas;
     [SerializeField] private GameObject activeGame;
+    [SerializeField] private GameObject redGlow;
     private Counter _counter;
     private UIManager _uiManager;
 
@@ -29,42 +29,41 @@ public class GameManager : MonoBehaviour
         _uiManager.SetTimerText((int)_counter.CurrentCounter());
     }
 
+    /// <summary>
+    /// Start a certain game, decided by the integer in comparison to GameTypes.
+    /// </summary>
+    /// <param name="game"></param>
     public void InitiateGame(int game)
     {
         Debug.Log((GameType)game);
+        ResetGame();
+        Instantiate(gameTypes[game], activeGame.transform.position, Quaternion.identity, activeGame.transform);
+    }
+
+    /// <summary>
+    /// Resets the game.
+    /// </summary>
+    private void ResetGame()
+    {
         foreach(Transform transform in activeGame.transform)
         {
             Destroy(transform.gameObject);
         }
-        Instantiate(gameTypes[game], activeGame.transform.position, Quaternion.identity, activeGame.transform);
-        /*switch(game){
-            case (int)GameType.CutTheWires:
-            Debug.Log((GameType)game);
-            break;
-            case (int)GameType.TypeThePassword:
-            //code block
-            break;
-            case (int)GameType.HammerThePower:
-            //code block
-            break;
-            case (int)GameType.PickTheLock:
-            //code block
-            break;
-            case (int)GameType.AssembleTheButton:
-            //code block
-            break;
-            case (int)GameType.FollowTheLights:
-            //code block
-            break;
-            case (int)GameType.TargetTheBomb:
-            //code block
-            break;
-            case (int)GameType.ExtinguishTheFuses:
-            //code block
-            break;
-            case (int)GameType.IgnoreTheDecoy:
-            //code block
-            break;
-        }*/
+    }
+
+    /// <summary>
+    /// On losing a game, exploding everything.
+    /// </summary>
+    public void OnLose()
+    {
+        var glow = Instantiate(redGlow, new Vector2(transform.position.x, transform.position.y+1.5f), Quaternion.identity);
+        Invoke("ResetGame", 4);
+        Destroy(glow, 4);
+    }
+
+    public void OnWin()
+    {
+        ResetGame();
+        InitiateGame(Random.Range(0, gameTypes.Length));
     }
 }
