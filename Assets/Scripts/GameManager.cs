@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int startingTimer;
     [SerializeField] private GameObject[] gameTypes;
     [SerializeField] private GameObject canvas;
+    [SerializeField] private GameObject activeGame;
     private Counter _counter;
     private UIManager _uiManager;
 
@@ -28,36 +29,42 @@ public class GameManager : MonoBehaviour
         _uiManager.SetTimerText((int)_counter.CurrentCounter());
     }
 
-    public void InitiateGame(GameType game)
+    public void InitiateGame(int game)
     {
-        switch(game){
-            case GameType.CutTheWires:
-            //code block
-            break;
-            case GameType.TypeThePassword:
-            //code block
-            break;
-            case GameType.HammerThePower:
-            //code block
-            break;
-            case GameType.PickTheLock:
-            //code block
-            break;
-            case GameType.AssembleTheButton:
-            //code block
-            break;
-            case GameType.FollowTheLights:
-            //code block
-            break;
-            case GameType.TargetTheBomb:
-            //code block
-            break;
-            case GameType.ExtinguishTheFuses:
-            //code block
-            break;
-            case GameType.IgnoreTheDecoy:
-            //code block
-            break;
+        Debug.Log((GameType)game);
+        foreach(Transform transform in activeGame.transform)
+        {
+            Destroy(transform.gameObject);
         }
+        Instantiate(gameTypes[game], activeGame.transform.position, Quaternion.identity, activeGame.transform);
+        /*switch(game){
+            case (int)GameType.CutTheWires:
+            Debug.Log((GameType)game);
+            break;
+            case (int)GameType.TypeThePassword:
+            //code block
+            break;
+            case (int)GameType.HammerThePower:
+            //code block
+            break;
+            case (int)GameType.PickTheLock:
+            //code block
+            break;
+            case (int)GameType.AssembleTheButton:
+            //code block
+            break;
+            case (int)GameType.FollowTheLights:
+            //code block
+            break;
+            case (int)GameType.TargetTheBomb:
+            //code block
+            break;
+            case (int)GameType.ExtinguishTheFuses:
+            //code block
+            break;
+            case (int)GameType.IgnoreTheDecoy:
+            //code block
+            break;
+        }*/
     }
 }
