@@ -3060,6 +3060,7 @@ MonoBehaviour:
   gameTypes:
   - {fileID: 3522598281961365412, guid: 166917c19381e35468b210ebfcc23b2e, type: 3}
   - {fileID: 3522598281961365412, guid: 99dad7c89d91eee45b0e9fe44f2f2629, type: 3}
+  - {fileID: 3522598281961365412, guid: 4e481eb39102e4d3a81c7cffde829102, type: 3}
   canvas: {fileID: 2039191815}
   activeGame: {fileID: 2086556903}
   redGlow: {fileID: 693576336718457600, guid: 21b7edf49ea8be140a0e3cf8e8d52d73, type: 3}
