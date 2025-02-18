@@ -34,7 +34,6 @@ public class TypeThePasscode : MonoBehaviour
         {
         //PlayOneShot(Sound);
         typedPasscode = (typedPasscode * 10) + number;
-        Debug.Log("current code is " + typedPasscode);
         if (typedPasscode == passcode)
         {
             GetComponent<Animator>().SetTrigger("gameWon");
@@ -51,7 +50,8 @@ public class TypeThePasscode : MonoBehaviour
 
     public void DeleteDigit()
     {
-        typedPasscode = ((int)passcode / 10);
+        float temporaryPasscode = typedPasscode/10;
+        typedPasscode = (int)temporaryPasscode;
     }
 
     public void OnWin()
