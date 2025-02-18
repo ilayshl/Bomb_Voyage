@@ -22,50 +22,76 @@ public class CutTheWires : MonoBehaviour
         _gameManager = FindObjectOfType<GameManager>();
     }
 
-    private void Start() {
+    private void Start()
+    {
         InitiateGame();
     }
 
+    /// <summary>
+    /// Sets random colors for each wire.
+    /// </summary>
     private void InitiateGame()
     {
         ResetColors();
-        foreach(Transform wire in gameObject.transform)
+        foreach (Transform wire in gameObject.transform)
         {
-            if(wire.CompareTag("Wire")){
-                for(int i=0; i<100; i++)
+            if (wire.CompareTag("Wire"))
+            {
+                for (int i = 0; i < 100; i++)
                 {
-                int randomIndex = Random.Range(0, wires.Length);
-                if(wires[randomIndex]==Color.green){
-                    Color randomColor = GetRandomColor();
-                    wires[randomIndex] = randomColor;
-                    wire.GetComponent<UnityEngine.UI.Image>().color = randomColor;
-                    break;
-                }
+                    int randomIndex = Random.Range(0, wires.Length);
+                    if (wires[randomIndex] == Color.green)
+                    {
+                        Color randomColor = GetRandomColor();
+                        wires[randomIndex] = randomColor;
+                        wire.GetComponent<UnityEngine.UI.Image>().color = randomColor;
+                        break;
+                    }
                 }
             }
         }
-        
+        SetColorsByOrder();
+    }
+    
+    /// <summary>
+    /// Sets all colors to green as the default. Good for debugging.
+    /// </summary>
+    private void ResetColors()
+    {
+        for (int i = 0; i < wires.Length; i++)
+        {
+            wires[i] = Color.green;
+        }
+    }
+    
+    /// <summary>
+    /// Arranges each color in its order.
+    /// </summary>
+    private void SetColorsByOrder()
+    {
         int j = 0;
-        foreach(Color color in wires)
+        foreach (Color color in wires)
         {
             SetText(j, color);
             j++;
         }
     }
 
-    private void ResetColors(){
-        for(int i=0; i<wires.Length; i++)
-        {
-            wires[i] = Color.green;
-        }
-    }
-
+    /// <summary>
+    /// Updates the corresponding manual text.
+    /// </summary>
+    /// <param name="index"></param>
+    /// <param name="color"></param>
     private void SetText(int index, Color color)
     {
         colorsTexts[index].color = color;
         colorsTexts[index].SetText(TranslateColor(color));
     }
 
+    /// <summary>
+    /// Returns and removes a random color from colors.
+    /// </summary>
+    /// <returns></returns>
     private Color GetRandomColor()
     {
         int randomIndex = Random.Range(0, colors.Count);
@@ -74,50 +100,64 @@ public class CutTheWires : MonoBehaviour
         return selectedColor;
     }
 
+    /// <summary>
+    /// Translates the colors used in the game to their name from their Hexcode.
+    /// </summary>
+    /// <param name="color"></param>
+    /// <returns></returns>
     private string TranslateColor(Color color)
     {
         string name = "Error";
         string hexString = color.ToHexString();
-        switch(hexString){
+        switch (hexString)
+        {
             case "FF0000FF":
-            name = "Red";
-            break;
+                name = "Red";
+                break;
             case "0000FFFF":
-            name = "Blue";
-            break;
+                name = "Blue";
+                break;
             case "FFEB04FF":
-            name = "Yellow";
-            break;
+                name = "Yellow";
+                break;
             case "FF00FFFF":
-            name = "Pink";
-            break;
+                name = "Pink";
+                break;
             case "7F7F7FFF":
-            name = "Gray";
-            break;
+                name = "Gray";
+                break;
             case "FFFFFFFF":
-            name = "White";
-            break;
+                name = "White";
+                break;
         }
         return name;
     }
 
+    /// <summary>
+    /// Checks if the wire was cut in the right order.
+    /// </summary>
+    /// <param name="color"></param>
     public void OnWireCut(Color color)
     {
-        if(wires[wiresCut] == color)
+        if (wires[wiresCut] == color)
         {
-            wires[wiresCut] = Color.black;
+            wires[wiresCut] = Color.black; //Resets the wires array in specific index.
             wiresCut++;
             //Sound.PlayOneShot(success);
         }
-        else{
+        else
+        {
             _gameManager.OnLose();
         }
-        if(wiresCut == wires.Length)
+        if (wiresCut == wires.Length)
         {
             GetComponent<Animator>().SetTrigger("gameWon");
         }
     }
-
+    
+    /// <summary>
+    /// Finishes the game.
+    /// </summary>
     public void OnWin()
     {
         _gameManager.OnWin();
