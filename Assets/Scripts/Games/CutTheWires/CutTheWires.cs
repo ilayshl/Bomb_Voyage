@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class CutTheWires : MonoBehaviour
 {
+
     [SerializeField] private Color[] wires = new Color[6];
 
     [SerializeField] private TextMeshProUGUI[] colorsTexts = new TextMeshProUGUI[6]; //Needs to stay
@@ -17,9 +18,12 @@ public class CutTheWires : MonoBehaviour
 
     private GameManager _gameManager;
 
+    private AudioManager _aManager;
+
     void Awake()
     {
         _gameManager = FindObjectOfType<GameManager>();
+        _aManager = FindObjectOfType<AudioManager>();
     }
 
     private void Start()
@@ -139,11 +143,11 @@ public class CutTheWires : MonoBehaviour
     /// <param name="color"></param>
     public void OnWireCut(Color color)
     {
-        if (wires[wiresCut] == color)
+        _aManager.PlayRandomCable();
+        if(wires[wiresCut] == color)
         {
             wires[wiresCut] = Color.black; //Resets the wires array in specific index.
             wiresCut++;
-            //Sound.PlayOneShot(success);
         }
         else
         {

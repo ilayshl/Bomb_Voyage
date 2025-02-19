@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
         foreach(Transform transform in activeGame.transform)
         {
             Destroy(transform.gameObject);
+            
         }
     }
 
