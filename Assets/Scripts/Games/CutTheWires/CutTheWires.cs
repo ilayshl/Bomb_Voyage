@@ -18,12 +18,12 @@ public class CutTheWires : MonoBehaviour
 
     private GameManager _gameManager;
 
-    private AudioManager _aManager;
+    private AudioManager _audioManager;
 
     void Awake()
     {
         _gameManager = FindObjectOfType<GameManager>();
-        _aManager = FindObjectOfType<AudioManager>();
+        _audioManager = _gameManager.GetComponentInChildren<AudioManager>();
     }
 
     private void Start()
@@ -144,7 +144,7 @@ public class CutTheWires : MonoBehaviour
     public void OnWireCut(Color color)
     {
 
-        _aManager.PlayRandomCable();
+        _audioManager.PlayRandomCable();
 
         if (wires[wiresCut] == color)
         {
@@ -154,6 +154,7 @@ public class CutTheWires : MonoBehaviour
         else
         {
             _gameManager.OnLose();
+            
         }
         if (wiresCut == wires.Length)
         {

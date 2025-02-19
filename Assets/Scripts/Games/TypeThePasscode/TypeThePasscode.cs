@@ -8,14 +8,14 @@ public class TypeThePasscode : MonoBehaviour
     private int typedPasscode;
 
     private GameManager _gameManager;
-    private AudioManager _aManager;
+    private AudioManager _audioManager;
 
     private bool gameLost=false;
 
     void Awake()
     {
         _gameManager = FindObjectOfType<GameManager>();
-        _aManager = _gameManager.GetComponentInChildren<AudioManager>();
+        _audioManager = _gameManager.GetComponentInChildren<AudioManager>();
     }
 
     void Start()
@@ -41,7 +41,7 @@ public class TypeThePasscode : MonoBehaviour
     public void PressKeypad(int number)
     {
 
-        _aManager.PlayKeyNumber(number);
+        _audioManager.PlayKeyNumber(number);
 
         if (!gameLost)
         {
@@ -54,7 +54,7 @@ public class TypeThePasscode : MonoBehaviour
         }
         if (typedPasscode > 999999 && !gameLost)
         {
-            //PlaySound(Error);
+            _audioManager.PlaySound("BombExplosion");
             _gameManager.OnLose();
             gameLost = true;
         }

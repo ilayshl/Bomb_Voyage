@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject redGlow;
     private Counter _counter;
     private UIManager _uiManager;
+    private AudioManager _audioManager;
 
     void Awake()
     {
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         _counter = new Counter(startingTimer++);
+        _audioManager = GetComponentInChildren<AudioManager>();
     }
 
     void Update()
@@ -57,6 +59,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void OnLose()
     {
+        _audioManager.PlaySound("BombExplosion");
         var glow = Instantiate(redGlow, new Vector2(transform.position.x, transform.position.y+1.5f), Quaternion.identity);
         Invoke("ResetGame", 4);
         Destroy(glow, 4);
