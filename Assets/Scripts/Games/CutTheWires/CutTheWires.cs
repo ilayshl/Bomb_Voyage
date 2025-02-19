@@ -156,7 +156,7 @@ public class CutTheWires : MonoBehaviour
     }
     
     /// <summary>
-    /// Finishes the game.
+    /// Finishes the game- gets called from the animation.
     /// </summary>
     public void OnWin()
     {
