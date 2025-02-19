@@ -34,15 +34,6 @@ public class TypeThePasscode : MonoBehaviour
     {
         if (!gameLost)
         {
-<<<<<<< Updated upstream
-        //PlayOneShot(Sound);
-        typedPasscode = (typedPasscode * 10) + number;
-        Debug.Log("current code is " + typedPasscode);
-        if (typedPasscode == passcode)
-        {
-            GetComponent<Animator>().SetTrigger("gameWon");
-        }
-=======
           //  int audioClipToGet = number;
             _aManager.PlayKeyNumber(number);
             //PlayOneShot(Sound);
@@ -51,7 +42,6 @@ public class TypeThePasscode : MonoBehaviour
             {
                 GetComponent<Animator>().SetTrigger("gameWon");
             }
->>>>>>> Stashed changes
         }
         if (typedPasscode > 999999 && !gameLost)
         {

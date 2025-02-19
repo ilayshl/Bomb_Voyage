@@ -107,12 +107,8 @@ public class CutTheWires : MonoBehaviour
 
     public void OnWireCut(Color color)
     {
-<<<<<<< Updated upstream
-        if(wires[wiresCut] == color)
-=======
         _aManager.PlayRandomCable();
         if (wires[wiresCut] == color)
->>>>>>> Stashed changes
         {
             wires[wiresCut] = Color.black;
             wiresCut++;
