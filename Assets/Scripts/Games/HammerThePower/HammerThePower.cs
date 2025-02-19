@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class HammerThePower : MonoBehaviour
 {
-    [SerializeField] private Image hintImage;
-    [SerializeField] private Sprite[] hints;
+    [SerializeField] private Image hintImage; //The image shown in the manual
+    [SerializeField] private Sprite[] hints; //The options to show in the manual
     [SerializeField] private PowerSupply[] _supplyUp;
     [SerializeField] private PowerSupply[] _supplyRight;
     [SerializeField] private PowerSupply[] _supplyDown;
@@ -35,12 +35,19 @@ public class HammerThePower : MonoBehaviour
         SetActivePowerSupply();
     }
 
+    /// <summary>
+    /// Get a random index for the hint images.
+    /// </summary>
     private void DecideOnDirection()
     {
         randomDirection = Random.Range(0, _connectedSupplies.Count);
         hintImage.sprite=hints[randomDirection];
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="supplies"></param>
     private void SetConnectedPowerSupplies(PowerSupply[] supplies)
     {
         int randomIndex = Random.Range(0, supplies.Length);

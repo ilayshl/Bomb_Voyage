@@ -35,9 +35,9 @@ public class PowerSupply : MonoBehaviour
 
     public void OnPowerBreak()
     {
+        supplyImage.sprite = brokenPowerSupply;
         HammerThePower parent = GetComponentInParent<HammerThePower>();
         parent.OnPowerBreak(isConnected, isActive);
-        supplyImage.sprite = brokenPowerSupply;
         GetComponent<Button>().enabled = false;
     }
 }
