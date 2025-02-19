@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class Wires : MonoBehaviour
 {
     [SerializeField] Sprite wireCut;
+    private AudioManager aManager;
     private CutTheWires parent;
     private Image image;
 
