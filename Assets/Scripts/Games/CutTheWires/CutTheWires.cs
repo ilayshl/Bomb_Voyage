@@ -17,7 +17,6 @@ public class CutTheWires : MonoBehaviour
     private int wiresCut = 0;
 
     private GameManager _gameManager;
-
     private AudioManager _aManager;
 
     void Awake()
