@@ -143,6 +143,9 @@ public class CutTheWires : MonoBehaviour
     /// <param name="color"></param>
     public void OnWireCut(Color color)
     {
+
+        _aManager.PlayRandomCable();
+
         if (wires[wiresCut] == color)
         {
             wires[wiresCut] = Color.black; //Resets the wires array in specific index.

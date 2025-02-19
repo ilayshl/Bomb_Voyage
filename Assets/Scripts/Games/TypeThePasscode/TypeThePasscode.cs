@@ -40,9 +40,12 @@ public class TypeThePasscode : MonoBehaviour
     /// <param name="number"></param>
     public void PressKeypad(int number)
     {
+
+        _aManager.PlayKeyNumber(number);
+
         if (!gameLost)
         {
-        //PlayOneShot(Sound);
+        
         typedPasscode = (typedPasscode * 10) + number;
         if (typedPasscode == passcode)
         {
