@@ -2406,6 +2406,25 @@ MonoBehaviour:
     loop: 0
     bypassReverb: 0
     source: {fileID: 0}
+  win:
+  - clipName: 
+    audioClip: {fileID: 8300000, guid: c2c898de498eaa34ea76bc8143289bb5, type: 3}
+    audioMixerGroup: {fileID: 0}
+    volume: 1
+    pitch: 1
+    sendReverb: 0
+    loop: 0
+    bypassReverb: 0
+    source: {fileID: 0}
+  - clipName: 
+    audioClip: {fileID: 8300000, guid: 94d89adcfbbc1aa41a7e6dbdb4517e89, type: 3}
+    audioMixerGroup: {fileID: 0}
+    volume: 1
+    pitch: 1
+    sendReverb: 0
+    loop: 0
+    bypassReverb: 0
+    source: {fileID: 0}
 --- !u!4 &1342909060
 Transform:
   m_ObjectHideFlags: 0

@@ -54,7 +54,7 @@ public class TypeThePasscode : MonoBehaviour
         }
         if (typedPasscode > 999999 && !gameLost)
         {
-            _audioManager.PlaySound("BombExplosion");
+            //_audioManager.PlaySound("BombExplosion");
             _gameManager.OnLose();
             gameLost = true;
         }

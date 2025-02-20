@@ -66,6 +66,7 @@ public class GameManager : MonoBehaviour
 
     public void OnWin()
     {
+        _audioManager.PlayRandomWin();
         ResetGame();
         InitiateGame(Random.Range(0, gameTypes.Length));
     }

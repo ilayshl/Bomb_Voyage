@@ -159,6 +159,7 @@ public class CutTheWires : MonoBehaviour
         if (wiresCut == wires.Length)
         {
             GetComponent<Animator>().SetTrigger("gameWon");
+            OnWin();
         }
     }
     

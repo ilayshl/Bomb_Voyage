@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour
     public Sound[] hammer;
     public Sound[] cableCutting;
     public Sound[] numberTyping;
+    public Sound[] win;
 
     public static AudioManager instance;
     
@@ -58,6 +59,17 @@ public class AudioManager : MonoBehaviour
         }
         
         foreach (Sound s in numberTyping)
+        {
+            s.source = gameObject.AddComponent<AudioSource>();
+            s.source.clip = s.audioClip;
+
+            s.source.volume = s.volume;
+            s.source.pitch = s.pitch;
+            s.source.loop = s.loop;
+            s.source.outputAudioMixerGroup = s.audioMixerGroup;
+        } 
+        
+        foreach (Sound s in win)
         {
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.audioClip;
@@ -129,6 +141,23 @@ public class AudioManager : MonoBehaviour
         if (s != null)
         {
             s.source.Play();
+        }
+    }
+        public void PlayRandomWin()
+    {
+        if (win.Length == 0)
+        {
+            Debug.LogWarning("No generalSounds available!");
+            return;
+        }
+
+        int randomSound = UnityEngine.Random.Range(0, win.Length);
+        Sound s = win[randomSound];
+
+        if (s != null)
+        {
+            s.source.Play();
+            Debug.LogWarning("played");
         }
     }
 
