@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
         _audioManager.PlaySound("BombExplosion");
         var glow = Instantiate(redGlow, new Vector2(transform.position.x, transform.position.y + 1.5f), Quaternion.identity);
         Invoke("EnableLoseScreen", 1.5f);
-        Invoke("ResetGame", 1.5f;
+        Invoke("ResetGame", 1.5f);
         Destroy(glow, 1.5f);
         Debug.Log("You broke bad after " + _gamesWon + " successful bombs disposed... Too bad.");
     }
