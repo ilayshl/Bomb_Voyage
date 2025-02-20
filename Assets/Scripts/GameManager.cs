@@ -10,8 +10,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject canvas;
     [SerializeField] private GameObject activeGame;
     [SerializeField] private GameObject redGlow;
-    private Counter _counter;
+    private bool _isRunning;
+    private Counter _gameCounter;
     private UIManager _uiManager;
+
+    private int _gamesWon;
 
     void Awake()
     {
@@ -20,13 +23,13 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        _counter = new Counter(startingTimer++);
+        _gameCounter = new Counter(startingTimer++);
     }
 
     void Update()
     {
-        _counter.ChangeCounter(-Time.deltaTime);
-        _uiManager.SetTimerText((int)_counter.CurrentCounter());
+        _gameCounter.ChangeCounter(-Time.deltaTime);
+        _uiManager.SetTimerText((int)_gameCounter.CurrentCounter());
     }
 
     /// <summary>
@@ -59,11 +62,13 @@ public class GameManager : MonoBehaviour
         var glow = Instantiate(redGlow, new Vector2(transform.position.x, transform.position.y+1.5f), Quaternion.identity);
         Invoke("ResetGame", 4);
         Destroy(glow, 4);
+        Debug.Log("You broke bad after " + _gamesWon + " successful bombs disposed... Too bad.");
     }
 
     public void OnWin()
     {
         ResetGame();
         InitiateGame(Random.Range(0, gameTypes.Length));
+        _gamesWon++;
     }
 }

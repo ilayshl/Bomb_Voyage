@@ -1,16 +1,18 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TypeThePasscode : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI text;
+    [SerializeField] private TextMeshProUGUI hiddenPasscodeText;
     private int passcode; //The passcode generated. this may not change once set.
     private int typedPasscode;
+    private bool gameLost = false;
 
     private GameManager _gameManager;
     private AudioManager _aManager;
 
-    private bool gameLost=false;
 
     void Awake()
     {
@@ -22,6 +24,7 @@ public class TypeThePasscode : MonoBehaviour
     {
         passcode = GeneratePasscode();
         text.SetText(passcode.ToString());
+        hiddenPasscodeText.text = "";
     }
 
     /// <summary>
@@ -42,13 +45,10 @@ public class TypeThePasscode : MonoBehaviour
     {
         if (!gameLost)
         {
-        typedPasscode = (typedPasscode * 10) + number;
-        if (typedPasscode == passcode)
-        {
-            GetComponent<Animator>().SetTrigger("gameWon");
-        }
             _aManager.PlayKeyNumber(number);
             typedPasscode = (typedPasscode * 10) + number;
+            UpdateHiddenPasscode();
+            Debug.Log(typedPasscode);
             if (typedPasscode == passcode)
             {
                 GetComponent<Animator>().SetTrigger("gameWon");
@@ -68,8 +68,9 @@ public class TypeThePasscode : MonoBehaviour
     /// </summary>
     public void DeleteDigit()
     {
-        float temporaryPasscode = typedPasscode/10;
+        float temporaryPasscode = typedPasscode / 10;
         typedPasscode = (int)temporaryPasscode;
+        UpdateHiddenPasscode();
     }
 
     /// <summary>
@@ -78,5 +79,19 @@ public class TypeThePasscode : MonoBehaviour
     public void OnWin()
     {
         _gameManager.OnWin();
+    }
+
+    private void UpdateHiddenPasscode()
+    {
+        string hiddenPasscode = typedPasscode.ToString();
+        for (int i = 0; i <= 9; i++)
+        {
+            hiddenPasscode = hiddenPasscode.Replace(i.ToString(), "*");
+        }
+        if(typedPasscode == 0)
+        {
+            hiddenPasscode = "";
+        }
+        hiddenPasscodeText.text = hiddenPasscode;
     }
 }
