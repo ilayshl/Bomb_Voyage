@@ -3,10 +3,22 @@ public class Counter
     private float _counter;
     private int _startingAmount { get; }
 
-    public Counter(int value)
+    public Counter(int value = 0)
     {
         this._startingAmount = value;
         this._counter = this._startingAmount;
+    }
+
+    public float Amount
+    {
+        get => this._counter;
+        set
+        {
+            if (value >= 0)
+            {
+                this._counter = value;
+            }
+        }
     }
 
     public float CurrentCounter(){

@@ -2956,7 +2956,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 60
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1294a97f5a185c54db7383bbe9b31827, type: 2}
   m_sharedMaterial: {fileID: 1947930518821165931, guid: 1294a97f5a185c54db7383bbe9b31827, type: 2}
@@ -2983,14 +2983,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 62.41
+  m_fontSize: 31.2
   m_fontSizeBase: 62.41
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -3281,6 +3281,8 @@ GameObject:
   - component: {fileID: 2058942872}
   - component: {fileID: 2058942873}
   - component: {fileID: 2058942874}
+  - component: {fileID: 2058942875}
+  - component: {fileID: 2058942876}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -3316,17 +3318,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69d00727b527410418b147a11778cf79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenuUI: {fileID: 1444055667}
-  loseScreenUI: {fileID: 957409194}
-  storyUI: {fileID: 0}
-  creditsUI: {fileID: 0}
   gameTypes:
   - {fileID: 3522598281961365412, guid: 166917c19381e35468b210ebfcc23b2e, type: 3}
   - {fileID: 3522598281961365412, guid: 99dad7c89d91eee45b0e9fe44f2f2629, type: 3}
   - {fileID: 3522598281961365412, guid: 4e481eb39102e4d3a81c7cffde829102, type: 3}
   canvas: {fileID: 2039191815}
   activeGame: {fileID: 2086556903}
-  redGlow: {fileID: 693576336718457600, guid: 21b7edf49ea8be140a0e3cf8e8d52d73, type: 3}
+  bombExplosion: {fileID: 693576336718457600, guid: 21b7edf49ea8be140a0e3cf8e8d52d73, type: 3}
 --- !u!114 &2058942874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3339,7 +3337,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c1364787ead390498c735d8ab0557b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  counterText: {fileID: 1780211608}
+  timerText: {fileID: 1780211608}
+  mainMenuUI: {fileID: 1444055667}
+  loseScreenUI: {fileID: 957409194}
+  storyUI: {fileID: 0}
+  creditsUI: {fileID: 0}
+--- !u!114 &2058942875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2058942869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e077e2cc87726409b9c6574a553309ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2058942876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2058942869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cfa18ae98e3c4401b09b4aed10bf9aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerText: {fileID: 1780211608}
 --- !u!1 &2086556903
 GameObject:
   m_ObjectHideFlags: 0
@@ -3413,7 +3440,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 108588184030161808, guid: 57fa0dbbaf3712b478c48018b99742b2, type: 3}
       propertyPath: m_Name
-      value: Main Menu
+      value: Main Menu UI
       objectReference: {fileID: 0}
     - target: {fileID: 108588184030161808, guid: 57fa0dbbaf3712b478c48018b99742b2, type: 3}
       propertyPath: m_IsActive
@@ -3644,6 +3671,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1351217930499111671, guid: de08b4ed1ba993d4b835534ea9a2f460, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351217930499111671, guid: de08b4ed1ba993d4b835534ea9a2f460, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351217930499111671, guid: de08b4ed1ba993d4b835534ea9a2f460, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2058942873}
+    - target: {fileID: 1351217930499111671, guid: de08b4ed1ba993d4b835534ea9a2f460, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351217930499111671, guid: de08b4ed1ba993d4b835534ea9a2f460, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnPlayButtonPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351217930499111671, guid: de08b4ed1ba993d4b835534ea9a2f460, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351217930499111671, guid: de08b4ed1ba993d4b835534ea9a2f460, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2285274085402086147, guid: de08b4ed1ba993d4b835534ea9a2f460, type: 3}
       propertyPath: m_fontAsset
       value: 
@@ -3671,6 +3726,10 @@ PrefabInstance:
     - target: {fileID: 2285274085402086147, guid: de08b4ed1ba993d4b835534ea9a2f460, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3114305033786099381, guid: de08b4ed1ba993d4b835534ea9a2f460, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4173958253994942090, guid: de08b4ed1ba993d4b835534ea9a2f460, type: 3}
       propertyPath: m_Name
@@ -3710,7 +3769,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8379401413736688567, guid: de08b4ed1ba993d4b835534ea9a2f460, type: 3}
       propertyPath: m_Name
-      value: Lose Screen
+      value: Lose Screen UI
       objectReference: {fileID: 0}
     - target: {fileID: 8379401413736688567, guid: de08b4ed1ba993d4b835534ea9a2f460, type: 3}
       propertyPath: m_IsActive

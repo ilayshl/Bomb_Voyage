@@ -7,7 +7,7 @@ public class TypeThePasscode : MonoBehaviour
     [SerializeField] private TextMeshProUGUI text;
     [SerializeField] private TextMeshProUGUI hiddenPasscodeText;
     private int passcode; //The passcode generated. this may not change once set.
-    private int typedPasscode;
+    private int typedPasscode; //The passcode that the player types.
     private bool gameLost = false;
 
     private GameManager _gameManager;
@@ -51,7 +51,6 @@ public class TypeThePasscode : MonoBehaviour
             _audioManager.PlayKeyNumber(number);
             typedPasscode = (typedPasscode * 10) + number;
             UpdateHiddenPasscode();
-            Debug.Log(typedPasscode);
             if (typedPasscode == passcode)
             {
                 GetComponent<Animator>().SetTrigger("gameWon");
@@ -83,7 +82,10 @@ public class TypeThePasscode : MonoBehaviour
     {
         _gameManager.OnWin();
     }
-
+    
+    /// <summary>
+    /// Updates the string to match the amount of digits currently in the typedPasscode.
+    /// </summary>
     private void UpdateHiddenPasscode()
     {
         string hiddenPasscode = typedPasscode.ToString();
