@@ -4,7 +4,7 @@ using UnityEngine;
 public class TypeThePasscode : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI text;
-    private int passcode;
+    private int passcode; //The passcode generated. this may not change once set.
     private int typedPasscode;
 
     private GameManager _gameManager;
@@ -22,19 +22,26 @@ public class TypeThePasscode : MonoBehaviour
         text.SetText(passcode.ToString());
     }
 
+    /// <summary>
+    /// Generates a radom 6 digits passcode.
+    /// </summary>
+    /// <returns></returns>
     private int GeneratePasscode()
     {
         int random = Random.Range(100000, 999999);
         return random;
     }
 
+    /// <summary>
+    /// If the game isn't lost already, adds the given digit to the typed passcode.
+    /// </summary>
+    /// <param name="number"></param>
     public void PressKeypad(int number)
     {
         if(!gameLost)
         {
         //PlayOneShot(Sound);
         typedPasscode = (typedPasscode * 10) + number;
-        Debug.Log("current code is " + typedPasscode);
         if (typedPasscode == passcode)
         {
             GetComponent<Animator>().SetTrigger("gameWon");
@@ -49,11 +56,18 @@ public class TypeThePasscode : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Deletes the last digit from the typed passcode.
+    /// </summary>
     public void DeleteDigit()
     {
-        typedPasscode = ((int)passcode / 10);
+        float temporaryPasscode = typedPasscode/10;
+        typedPasscode = (int)temporaryPasscode;
     }
 
+    /// <summary>
+    /// When the game is won.
+    /// </summary>
     public void OnWin()
     {
         _gameManager.OnWin();
