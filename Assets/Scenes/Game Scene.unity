@@ -2193,6 +2193,216 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1305824008}
   m_CullTransparentMesh: 1
+--- !u!1 &1342909058
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1342909060}
+  - component: {fileID: 1342909059}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1342909059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342909058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 006a19d696b16a348a032745f7c5daa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  generalSounds:
+  - clipName: Hum
+    audioClip: {fileID: 8300000, guid: 059850e99ce654b4380b7661e94a08f6, type: 3}
+    audioMixerGroup: {fileID: 0}
+    volume: 0.5
+    pitch: 1
+    sendReverb: 0
+    loop: 1
+    bypassReverb: 0
+    source: {fileID: 0}
+  hammer:
+  - clipName: 
+    audioClip: {fileID: 8300000, guid: 93c7843dff807c5479575197cc4133ee, type: 3}
+    audioMixerGroup: {fileID: 0}
+    volume: 1
+    pitch: 1
+    sendReverb: 0
+    loop: 0
+    bypassReverb: 0
+    source: {fileID: 0}
+  - clipName: 
+    audioClip: {fileID: 8300000, guid: 3d145c0996732cc428cbe178c5fcff1e, type: 3}
+    audioMixerGroup: {fileID: 0}
+    volume: 1
+    pitch: 1
+    sendReverb: 0
+    loop: 0
+    bypassReverb: 0
+    source: {fileID: 0}
+  - clipName: 
+    audioClip: {fileID: 8300000, guid: 77e9c6e3be99d3a4db79ceda24f5aebe, type: 3}
+    audioMixerGroup: {fileID: 0}
+    volume: 1
+    pitch: 1
+    sendReverb: 0
+    loop: 0
+    bypassReverb: 0
+    source: {fileID: 0}
+  cableCutting:
+  - clipName: 
+    audioClip: {fileID: 8300000, guid: fb3b80521d38fc44ba1ad3aea5784d27, type: 3}
+    audioMixerGroup: {fileID: 0}
+    volume: 1
+    pitch: 1
+    sendReverb: 0
+    loop: 0
+    bypassReverb: 0
+    source: {fileID: 0}
+  - clipName: 
+    audioClip: {fileID: 8300000, guid: 1be3eff7762a528459192de057ca35a6, type: 3}
+    audioMixerGroup: {fileID: 0}
+    volume: 1
+    pitch: 1
+    sendReverb: 0
+    loop: 0
+    bypassReverb: 0
+    source: {fileID: 0}
+  - clipName: 
+    audioClip: {fileID: 8300000, guid: 05c1813048d6b28499b23514ba8a20a1, type: 3}
+    audioMixerGroup: {fileID: 0}
+    volume: 1
+    pitch: 1
+    sendReverb: 0
+    loop: 0
+    bypassReverb: 0
+    source: {fileID: 0}
+  - clipName: 
+    audioClip: {fileID: 8300000, guid: 81b44e91a40c416448b005e137b84e5b, type: 3}
+    audioMixerGroup: {fileID: 0}
+    volume: 1
+    pitch: 1
+    sendReverb: 0
+    loop: 0
+    bypassReverb: 0
+    source: {fileID: 0}
+  numberTyping:
+  - clipName: Num1
+    audioClip: {fileID: 8300000, guid: 115739022a25bce48b6e8d6e38ff7c5c, type: 3}
+    audioMixerGroup: {fileID: 0}
+    volume: 1
+    pitch: 1
+    sendReverb: 0
+    loop: 0
+    bypassReverb: 0
+    source: {fileID: 0}
+  - clipName: Num2
+    audioClip: {fileID: 8300000, guid: b0a8622db305cca49af6911c1ab7b46c, type: 3}
+    audioMixerGroup: {fileID: 0}
+    volume: 1
+    pitch: 1
+    sendReverb: 0
+    loop: 0
+    bypassReverb: 0
+    source: {fileID: 0}
+  - clipName: Num3
+    audioClip: {fileID: 8300000, guid: b0b35a0ba20522948bd99a6338267d13, type: 3}
+    audioMixerGroup: {fileID: 0}
+    volume: 1
+    pitch: 1
+    sendReverb: 0
+    loop: 0
+    bypassReverb: 0
+    source: {fileID: 0}
+  - clipName: Num4
+    audioClip: {fileID: 8300000, guid: a9f49762009df80468d74b2a595d423e, type: 3}
+    audioMixerGroup: {fileID: 0}
+    volume: 1
+    pitch: 1
+    sendReverb: 0
+    loop: 0
+    bypassReverb: 0
+    source: {fileID: 0}
+  - clipName: Num5
+    audioClip: {fileID: 8300000, guid: deaa0db80b7a45c4cbdcad2659548af6, type: 3}
+    audioMixerGroup: {fileID: 0}
+    volume: 1
+    pitch: 1
+    sendReverb: 0
+    loop: 0
+    bypassReverb: 0
+    source: {fileID: 0}
+  - clipName: Num6
+    audioClip: {fileID: 8300000, guid: b001a56e2bc52a74592d08b3eeca49a0, type: 3}
+    audioMixerGroup: {fileID: 0}
+    volume: 1
+    pitch: 1
+    sendReverb: 0
+    loop: 0
+    bypassReverb: 0
+    source: {fileID: 0}
+  - clipName: Num7
+    audioClip: {fileID: 8300000, guid: a23f9fa4ba2b3174db71187255238b52, type: 3}
+    audioMixerGroup: {fileID: 0}
+    volume: 1
+    pitch: 1
+    sendReverb: 0
+    loop: 0
+    bypassReverb: 0
+    source: {fileID: 0}
+  - clipName: Num8
+    audioClip: {fileID: 8300000, guid: fda6772d4f85895498c7053165a4e8bf, type: 3}
+    audioMixerGroup: {fileID: 0}
+    volume: 1
+    pitch: 1
+    sendReverb: 0
+    loop: 0
+    bypassReverb: 0
+    source: {fileID: 0}
+  - clipName: Num9
+    audioClip: {fileID: 8300000, guid: b877ee8d2cb5c0d4c8e07ad5b10ede66, type: 3}
+    audioMixerGroup: {fileID: 0}
+    volume: 1
+    pitch: 1
+    sendReverb: 0
+    loop: 0
+    bypassReverb: 0
+    source: {fileID: 0}
+  - clipName: Num10
+    audioClip: {fileID: 8300000, guid: c7a9acb710d2eb2489baf7980ddc67dd, type: 3}
+    audioMixerGroup: {fileID: 0}
+    volume: 1
+    pitch: 1
+    sendReverb: 0
+    loop: 0
+    bypassReverb: 0
+    source: {fileID: 0}
+--- !u!4 &1342909060
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342909058}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2058942872}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1418365230
 GameObject:
   m_ObjectHideFlags: 0
@@ -3041,7 +3251,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1342909060}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2058942873
