@@ -17,12 +17,13 @@ public class CutTheWires : MonoBehaviour
     private int wiresCut = 0;
 
     private GameManager _gameManager;
-    private AudioManager _aManager;
+
+    private AudioManager _audioManager;
 
     void Awake()
     {
         _gameManager = FindObjectOfType<GameManager>();
-        _aManager = FindObjectOfType<AudioManager>();
+        _audioManager = _gameManager.GetComponentInChildren<AudioManager>();
     }
 
     private void Start()
@@ -142,8 +143,10 @@ public class CutTheWires : MonoBehaviour
     /// <param name="color"></param>
     public void OnWireCut(Color color)
     {
-        _aManager.PlayRandomCable();
-        if(wires[wiresCut] == color)
+
+        _audioManager.PlayRandomCable();
+
+        if (wires[wiresCut] == color)
         {
             wires[wiresCut] = Color.black; //Resets the wires array in specific index.
             wiresCut++;
@@ -151,10 +154,12 @@ public class CutTheWires : MonoBehaviour
         else
         {
             _gameManager.OnLose();
+            
         }
         if (wiresCut == wires.Length)
         {
             GetComponent<Animator>().SetTrigger("gameWon");
+            OnWin();
         }
     }
     

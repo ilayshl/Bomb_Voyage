@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     private bool _isRunning;
     private Counter _gameCounter;
     private UIManager _uiManager;
+    private AudioManager _audioManager;
 
     private int _gamesWon;
 
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         _gameCounter = new Counter(startingTimer++);
+        _audioManager = GetComponentInChildren<AudioManager>();
     }
 
     void Update()
@@ -59,6 +61,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void OnLose()
     {
+        _audioManager.PlaySound("BombExplosion");
         var glow = Instantiate(redGlow, new Vector2(transform.position.x, transform.position.y+1.5f), Quaternion.identity);
         Invoke("ResetGame", 4);
         Destroy(glow, 4);
@@ -67,6 +70,7 @@ public class GameManager : MonoBehaviour
 
     public void OnWin()
     {
+        _audioManager.PlayRandomWin();
         ResetGame();
         InitiateGame(Random.Range(0, gameTypes.Length));
         _gamesWon++;

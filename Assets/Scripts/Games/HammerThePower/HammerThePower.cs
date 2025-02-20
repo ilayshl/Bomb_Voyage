@@ -12,6 +12,8 @@ public class HammerThePower : MonoBehaviour
     [SerializeField] private PowerSupply[] _supplyDown;
     [SerializeField] private PowerSupply[] _supplyLeft;
 
+    private AudioManager _audioManager;   
+
     int randomDirection;
 
     private List<PowerSupply> _connectedSupplies = new List<PowerSupply>();
@@ -21,6 +23,7 @@ public class HammerThePower : MonoBehaviour
     private void Awake()
     {
         _gameManager = FindObjectOfType<GameManager>();
+        _audioManager = _gameManager.GetComponentInChildren<AudioManager>();
         RectTransform rectTransform = GetComponent<RectTransform>();
         rectTransform.anchoredPosition -= new Vector2(70, rectTransform.anchoredPosition.y);
     }
@@ -71,8 +74,9 @@ public class HammerThePower : MonoBehaviour
     /// <param name="isActive"></param>
     public void OnPowerBreak(bool isConnected, bool isActive)
     {
+        _audioManager.PlayRandomHammer();
         //Play Sound
-        if(isConnected && isActive)
+        if (isConnected && isActive)
         {
             GetComponent<Animator>().SetTrigger("gameWon");
         }
