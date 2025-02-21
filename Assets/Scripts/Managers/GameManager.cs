@@ -53,7 +53,8 @@ public class GameManager : MonoBehaviour
     {
         _audioManager.PlaySound("BombExplosion");
         var glow = Instantiate(bombExplosion, new Vector2(transform.position.x, transform.position.y + 1.5f), Quaternion.identity);
-        _uiManager.InvokeLoseScreen(1.5f);
+        _uiManager.EnableLoseScreen(true, 1.5f);
+        _timeManager.ClearTimer();
         Invoke("ResetGame", 1.5f);
         Destroy(glow, 1.5f);
     }
@@ -76,7 +77,8 @@ public class GameManager : MonoBehaviour
     public void OnPlayButtonPress()
     {
         _uiManager.DisableMainMenu();
+        _uiManager.EnableLoseScreen(false);
         InitiateGame();
-        _timeManager.NewTimer(10);
+        _timeManager.NewTimer();
     }
 }

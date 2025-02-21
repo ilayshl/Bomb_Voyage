@@ -43,13 +43,9 @@ public class TimeManager : MonoBehaviour
     /// Creats and starts a new timer with STARTING_TIME seconds.
     /// </summary>
     /// <param name="time"></param>
-    public void NewTimer(int time)
+    public void NewTimer()
     {
-        if (_gameTimer == null)
-        {
             _gameTimer = new Counter(STARTING_TIME);
-        }
-
     }
 
     /// <summary>
@@ -81,5 +77,10 @@ public class TimeManager : MonoBehaviour
             }
         }
         return difficulty;
+    }
+
+    public void ClearTimer()
+    {
+        _gameTimer = null;
     }
 }

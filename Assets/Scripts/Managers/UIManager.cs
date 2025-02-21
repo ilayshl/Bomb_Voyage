@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -28,20 +29,18 @@ public class UIManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Sets lose screen on.
-    /// </summary>
-     private void EnableLoseScreen()
-    {
-        loseScreenUI.gameObject.SetActive(true);
-    }
-
-    /// <summary>
     /// Calls the Lose screen after 'time' seconds.
     /// </summary>
     /// <param name="time"></param>
-    public void InvokeLoseScreen(float time)
+    public void EnableLoseScreen(bool value, float time = 0)
     {
-        Invoke("EnableLoseScreen", time);
+        StartCoroutine(InvokeLoseScreen(value, time));
+    }
+
+    public IEnumerator InvokeLoseScreen(bool value, float time)
+    {
+        yield return new WaitForSeconds(time);
+        loseScreenUI.gameObject.SetActive(value);
     }
 
     /// <summary>
@@ -53,5 +52,5 @@ public class UIManager : MonoBehaviour
         loseScreenUI.gameObject.SetActive(false);
         timerText.gameObject.SetActive(false);
     }
-    
+
 }

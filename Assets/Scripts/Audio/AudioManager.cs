@@ -157,7 +157,6 @@ public class AudioManager : MonoBehaviour
         if (s != null)
         {
             s.source.Play();
-            Debug.LogWarning("played");
         }
     }
 

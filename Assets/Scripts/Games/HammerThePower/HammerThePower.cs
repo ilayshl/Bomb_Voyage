@@ -11,8 +11,9 @@ public class HammerThePower : MonoBehaviour
     [SerializeField] private PowerSupply[] _supplyRight;
     [SerializeField] private PowerSupply[] _supplyDown;
     [SerializeField] private PowerSupply[] _supplyLeft;
+    bool isLost=false;
 
-    private AudioManager _audioManager;   
+    private AudioManager _audioManager;
 
     int randomDirection;
 
@@ -44,11 +45,11 @@ public class HammerThePower : MonoBehaviour
     private void DecideOnDirection()
     {
         randomDirection = Random.Range(0, _connectedSupplies.Count);
-        hintImage.sprite=hints[randomDirection];
+        hintImage.sprite = hints[randomDirection];
     }
 
     /// <summary>
-    /// 
+    /// Chooses 1 out of an array to set as isConected.
     /// </summary>
     /// <param name="supplies"></param>
     private void SetConnectedPowerSupplies(PowerSupply[] supplies)
@@ -74,15 +75,18 @@ public class HammerThePower : MonoBehaviour
     /// <param name="isActive"></param>
     public void OnPowerBreak(bool isConnected, bool isActive)
     {
+        if(!isLost)
+        {
         _audioManager.PlayRandomHammer();
-        //Play Sound
         if (isConnected && isActive)
         {
             GetComponent<Animator>().SetTrigger("gameWon");
         }
-        if(isConnected && !isActive)
+        else
         {
             _gameManager.OnLose();
+            isLost=true;
+        }
         }
     }
 
