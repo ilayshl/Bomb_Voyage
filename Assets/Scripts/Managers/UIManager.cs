@@ -1,14 +1,17 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private Transform mainMenuUI;
     [SerializeField] private Transform loseScreenUI;
-    [SerializeField] private Transform storyUI;
-    [SerializeField] private Transform creditsUI;
+    [SerializeField] private Transform storyHeader;
+    [SerializeField] private Transform creditsHeader;
+    [SerializeField] private Transform mainMenuHeader;
+    [SerializeField] private Button backButton;
 
     /// <summary>
     /// Sets the text of the timer.
@@ -51,6 +54,24 @@ public class UIManager : MonoBehaviour
         mainMenuUI.gameObject.SetActive(true);
         loseScreenUI.gameObject.SetActive(false);
         timerText.gameObject.SetActive(false);
+        mainMenuHeader.gameObject.SetActive(true);
+        storyHeader.gameObject.SetActive(false);
+        creditsHeader.gameObject.SetActive(false);
+        backButton.gameObject.SetActive(false);
+    }
+
+    public void Story()
+    {
+        mainMenuHeader.gameObject.SetActive(false);
+        storyHeader.gameObject.SetActive(true);
+        backButton.gameObject.SetActive(true);
+    }
+
+    public void Credits()
+    {
+        mainMenuHeader.gameObject.SetActive(false);
+        creditsHeader.gameObject.SetActive(true);
+        backButton.gameObject.SetActive(true);
     }
 
 }

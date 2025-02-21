@@ -62,7 +62,7 @@ public class TimeManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Does the mathematical thing to decide how many seconds should be 
+    /// Does the mathematical thing to decide how many seconds should be deducted.
     /// </summary>
     /// <param name="gamesWon"></param>
     /// <returns></returns>
@@ -73,12 +73,15 @@ public class TimeManager : MonoBehaviour
         {
             if (i % STARTING_TIME == 0 && i != 0)
             {
-                difficulty--;
+                difficulty++;
             }
         }
         return difficulty;
     }
 
+    /// <summary>
+    /// Clears the timer to display nothing.
+    /// </summary>
     public void ClearTimer()
     {
         _gameTimer = null;
