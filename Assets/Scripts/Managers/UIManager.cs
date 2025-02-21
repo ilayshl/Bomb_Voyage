@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private Transform mainMenuUI;
     [SerializeField] private Transform loseScreenUI;
     [SerializeField] private Transform storyHeader;
     [SerializeField] private Transform creditsHeader;
     [SerializeField] private Transform mainMenuHeader;
     [SerializeField] private Button backButton;
+    private TextMeshProUGUI timerText;
 
     /// <summary>
     /// Sets the text of the timer.
@@ -19,7 +19,16 @@ public class UIManager : MonoBehaviour
     /// <param name="timer"></param>
     public void SetTimerText(double timer)
     {
-        timerText.SetText(timer.ToString());
+        if(timerText!=null){ timerText.SetText(timer.ToString()); }
+    }
+
+    /// <summary>
+    /// Changes where the time will be shown.
+    /// </summary>
+    /// <param name="updatedText"></param>
+    public void ChangeTimerReference(TextMeshProUGUI updatedText)
+    {
+        timerText = updatedText;
     }
 
     /// <summary>
@@ -28,7 +37,6 @@ public class UIManager : MonoBehaviour
     public void DisableMainMenu()
     {
         mainMenuUI.gameObject.SetActive(false);
-        timerText.gameObject.SetActive(true);
     }
 
     /// <summary>
@@ -53,7 +61,6 @@ public class UIManager : MonoBehaviour
     {
         mainMenuUI.gameObject.SetActive(true);
         loseScreenUI.gameObject.SetActive(false);
-        timerText.gameObject.SetActive(false);
         mainMenuHeader.gameObject.SetActive(true);
         storyHeader.gameObject.SetActive(false);
         creditsHeader.gameObject.SetActive(false);

@@ -14,12 +14,13 @@ public class TimeManager : MonoBehaviour
     {
         _gameManager = GetComponent<GameManager>();
         _uiManager = GetComponent<UIManager>();
-
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(timerText!=null)
+        {
         if (_gameTimer != null)
         {
             if (_gameTimer.CurrentCounter() > 0)
@@ -35,7 +36,7 @@ public class TimeManager : MonoBehaviour
                 _gameTimer = null;
                 _gameManager.OnLose();
             }
-
+        }
         }
     }
 

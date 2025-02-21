@@ -1,36 +1,38 @@
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class HammerThePower : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private Image hintImage; //The image shown in the manual
     [SerializeField] private Sprite[] hints; //The options to show in the manual
     [SerializeField] private PowerSupply[] _supplyUp;
     [SerializeField] private PowerSupply[] _supplyRight;
     [SerializeField] private PowerSupply[] _supplyDown;
     [SerializeField] private PowerSupply[] _supplyLeft;
+    private List<PowerSupply> _connectedSupplies = new List<PowerSupply>();
     bool isLost=false;
-
-    private AudioManager _audioManager;
-
     int randomDirection;
 
-    private List<PowerSupply> _connectedSupplies = new List<PowerSupply>();
-
     private GameManager _gameManager;
+    private AudioManager _audioManager;
+    private UIManager _uiManager;
 
     private void Awake()
     {
         _gameManager = FindObjectOfType<GameManager>();
         _audioManager = _gameManager.GetComponentInChildren<AudioManager>();
+        _uiManager = _gameManager.GetComponent<UIManager>();
         RectTransform rectTransform = GetComponent<RectTransform>();
         rectTransform.anchoredPosition -= new Vector2(70, rectTransform.anchoredPosition.y);
     }
 
     private void Start()
     {
+        _uiManager.ChangeTimerReference(timerText);
         SetConnectedPowerSupplies(_supplyUp);
         SetConnectedPowerSupplies(_supplyRight);
         SetConnectedPowerSupplies(_supplyDown);

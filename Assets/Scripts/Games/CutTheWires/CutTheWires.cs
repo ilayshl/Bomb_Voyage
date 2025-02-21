@@ -6,28 +6,28 @@ using UnityEngine;
 
 public class CutTheWires : MonoBehaviour
 {
-
+    [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private Color[] wires = new Color[6];
-
-    [SerializeField] private TextMeshProUGUI[] colorsTexts = new TextMeshProUGUI[6]; //Needs to stay
-
+    [SerializeField] private TextMeshProUGUI[] colorsTexts = new TextMeshProUGUI[6];
     private List<Color> colors = new List<Color>()
     {Color.grey, Color.blue, Color.red, Color.yellow, Color.magenta, Color.white};
 
     private int wiresCut = 0;
 
     private GameManager _gameManager;
-
     private AudioManager _audioManager;
+    private UIManager _uiManager;
 
     void Awake()
     {
         _gameManager = FindObjectOfType<GameManager>();
         _audioManager = _gameManager.GetComponentInChildren<AudioManager>();
+        _uiManager = _gameManager.GetComponent<UIManager>();
     }
 
     private void Start()
     {
+        _uiManager.ChangeTimerReference(timerText);
         InitiateGame();
     }
 

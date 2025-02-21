@@ -4,25 +4,29 @@ using UnityEngine;
 
 public class TypeThePasscode : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI text;
+    [SerializeField] private TextMeshProUGUI timerText;
+    [SerializeField] private TextMeshProUGUI manualText;
     [SerializeField] private TextMeshProUGUI hiddenPasscodeText;
     private int passcode; //The passcode generated. this may not change once set.
     private int typedPasscode; //The passcode that the player types.
     private bool isLost = false;
     private GameManager _gameManager;
     private AudioManager _audioManager;
+    private UIManager _uiManager;
 
 
     void Awake()
     {
         _gameManager = FindObjectOfType<GameManager>();
         _audioManager = _gameManager.GetComponentInChildren<AudioManager>();
+        _uiManager = _gameManager.GetComponent<UIManager>();
     }
 
     void Start()
     {
+        _uiManager.ChangeTimerReference(timerText);
         passcode = GeneratePasscode();
-        text.SetText(passcode.ToString());
+        manualText.SetText(passcode.ToString());
         hiddenPasscodeText.text = "";
     }
 
