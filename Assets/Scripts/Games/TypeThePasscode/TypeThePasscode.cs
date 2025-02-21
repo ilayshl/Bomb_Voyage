@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -63,11 +64,14 @@ public class TypeThePasscode : MonoBehaviour
 
     }
 
+
+
     /// <summary>
     /// Deletes the last digit from the typed passcode.
     /// </summary>
     public void DeleteDigit()
     {
+        _audioManager.PlaySound("DeleteDigit_Type");
         float temporaryPasscode = typedPasscode / 10;
         typedPasscode = (int)temporaryPasscode;
         UpdateHiddenPasscode();

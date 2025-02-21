@@ -2257,7 +2257,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - clipName: BombExplosion
     audioClip: {fileID: 8300000, guid: 4a0b28390334d88419bda795e16e1536, type: 3}
-    audioMixerGroup: {fileID: 0}
+    audioMixerGroup: {fileID: 6654427930497349573, guid: 7d960c326abe7fc489bb8046835d03a0, type: 2}
     volume: 1
     pitch: 1
     sendReverb: 0
@@ -2266,7 +2266,25 @@ MonoBehaviour:
     source: {fileID: 0}
   - clipName: Click
     audioClip: {fileID: 8300000, guid: e6c5a1e7d13d8e3429d0d97c99b3d7f2, type: 3}
-    audioMixerGroup: {fileID: 0}
+    audioMixerGroup: {fileID: 6629106727215953231, guid: 7d960c326abe7fc489bb8046835d03a0, type: 2}
+    volume: 1
+    pitch: 1
+    sendReverb: 0
+    loop: 0
+    bypassReverb: 0
+    source: {fileID: 0}
+  - clipName: MainMusic
+    audioClip: {fileID: 8300000, guid: 7f10184458b699146ba30ebe4edd0f5c, type: 3}
+    audioMixerGroup: {fileID: 8154458134371900459, guid: 7d960c326abe7fc489bb8046835d03a0, type: 2}
+    volume: 0.559
+    pitch: 1
+    sendReverb: 0
+    loop: 1
+    bypassReverb: 0
+    source: {fileID: 0}
+  - clipName: DeleteDigit_Type
+    audioClip: {fileID: 8300000, guid: 5aef06fcb087799478ed24d1961c7ef5, type: 3}
+    audioMixerGroup: {fileID: -5984405501576422021, guid: 7d960c326abe7fc489bb8046835d03a0, type: 2}
     volume: 1
     pitch: 1
     sendReverb: 0
@@ -2276,7 +2294,7 @@ MonoBehaviour:
   hammer:
   - clipName: 
     audioClip: {fileID: 8300000, guid: 93c7843dff807c5479575197cc4133ee, type: 3}
-    audioMixerGroup: {fileID: 0}
+    audioMixerGroup: {fileID: -4184687836773330536, guid: 7d960c326abe7fc489bb8046835d03a0, type: 2}
     volume: 1
     pitch: 1
     sendReverb: 0
@@ -2285,7 +2303,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - clipName: 
     audioClip: {fileID: 8300000, guid: 3d145c0996732cc428cbe178c5fcff1e, type: 3}
-    audioMixerGroup: {fileID: 0}
+    audioMixerGroup: {fileID: -4184687836773330536, guid: 7d960c326abe7fc489bb8046835d03a0, type: 2}
     volume: 1
     pitch: 1
     sendReverb: 0
@@ -2294,7 +2312,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - clipName: 
     audioClip: {fileID: 8300000, guid: 77e9c6e3be99d3a4db79ceda24f5aebe, type: 3}
-    audioMixerGroup: {fileID: 0}
+    audioMixerGroup: {fileID: -4184687836773330536, guid: 7d960c326abe7fc489bb8046835d03a0, type: 2}
     volume: 1
     pitch: 1
     sendReverb: 0
@@ -2304,7 +2322,7 @@ MonoBehaviour:
   cableCutting:
   - clipName: 
     audioClip: {fileID: 8300000, guid: fb3b80521d38fc44ba1ad3aea5784d27, type: 3}
-    audioMixerGroup: {fileID: 0}
+    audioMixerGroup: {fileID: 5468331057724017894, guid: 7d960c326abe7fc489bb8046835d03a0, type: 2}
     volume: 1
     pitch: 1
     sendReverb: 0
@@ -2313,7 +2331,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - clipName: 
     audioClip: {fileID: 8300000, guid: 1be3eff7762a528459192de057ca35a6, type: 3}
-    audioMixerGroup: {fileID: 0}
+    audioMixerGroup: {fileID: 5468331057724017894, guid: 7d960c326abe7fc489bb8046835d03a0, type: 2}
     volume: 1
     pitch: 1
     sendReverb: 0
@@ -2322,7 +2340,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - clipName: 
     audioClip: {fileID: 8300000, guid: 05c1813048d6b28499b23514ba8a20a1, type: 3}
-    audioMixerGroup: {fileID: 0}
+    audioMixerGroup: {fileID: 5468331057724017894, guid: 7d960c326abe7fc489bb8046835d03a0, type: 2}
     volume: 1
     pitch: 1
     sendReverb: 0
@@ -2331,7 +2349,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - clipName: 
     audioClip: {fileID: 8300000, guid: 81b44e91a40c416448b005e137b84e5b, type: 3}
-    audioMixerGroup: {fileID: 0}
+    audioMixerGroup: {fileID: 5468331057724017894, guid: 7d960c326abe7fc489bb8046835d03a0, type: 2}
     volume: 1
     pitch: 1
     sendReverb: 0
@@ -2341,7 +2359,7 @@ MonoBehaviour:
   numberTyping:
   - clipName: Num1
     audioClip: {fileID: 8300000, guid: 115739022a25bce48b6e8d6e38ff7c5c, type: 3}
-    audioMixerGroup: {fileID: 0}
+    audioMixerGroup: {fileID: -5984405501576422021, guid: 7d960c326abe7fc489bb8046835d03a0, type: 2}
     volume: 1
     pitch: 1
     sendReverb: 0
@@ -2350,7 +2368,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - clipName: Num2
     audioClip: {fileID: 8300000, guid: b0a8622db305cca49af6911c1ab7b46c, type: 3}
-    audioMixerGroup: {fileID: 0}
+    audioMixerGroup: {fileID: -5984405501576422021, guid: 7d960c326abe7fc489bb8046835d03a0, type: 2}
     volume: 1
     pitch: 1
     sendReverb: 0
@@ -2359,7 +2377,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - clipName: Num3
     audioClip: {fileID: 8300000, guid: b0b35a0ba20522948bd99a6338267d13, type: 3}
-    audioMixerGroup: {fileID: 0}
+    audioMixerGroup: {fileID: -5984405501576422021, guid: 7d960c326abe7fc489bb8046835d03a0, type: 2}
     volume: 1
     pitch: 1
     sendReverb: 0
@@ -2368,7 +2386,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - clipName: Num4
     audioClip: {fileID: 8300000, guid: a9f49762009df80468d74b2a595d423e, type: 3}
-    audioMixerGroup: {fileID: 0}
+    audioMixerGroup: {fileID: -5984405501576422021, guid: 7d960c326abe7fc489bb8046835d03a0, type: 2}
     volume: 1
     pitch: 1
     sendReverb: 0
@@ -2377,7 +2395,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - clipName: Num5
     audioClip: {fileID: 8300000, guid: deaa0db80b7a45c4cbdcad2659548af6, type: 3}
-    audioMixerGroup: {fileID: 0}
+    audioMixerGroup: {fileID: -5984405501576422021, guid: 7d960c326abe7fc489bb8046835d03a0, type: 2}
     volume: 1
     pitch: 1
     sendReverb: 0
@@ -2386,7 +2404,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - clipName: Num6
     audioClip: {fileID: 8300000, guid: b001a56e2bc52a74592d08b3eeca49a0, type: 3}
-    audioMixerGroup: {fileID: 0}
+    audioMixerGroup: {fileID: -5984405501576422021, guid: 7d960c326abe7fc489bb8046835d03a0, type: 2}
     volume: 1
     pitch: 1
     sendReverb: 0
@@ -2395,7 +2413,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - clipName: Num7
     audioClip: {fileID: 8300000, guid: a23f9fa4ba2b3174db71187255238b52, type: 3}
-    audioMixerGroup: {fileID: 0}
+    audioMixerGroup: {fileID: -5984405501576422021, guid: 7d960c326abe7fc489bb8046835d03a0, type: 2}
     volume: 1
     pitch: 1
     sendReverb: 0
@@ -2404,7 +2422,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - clipName: Num8
     audioClip: {fileID: 8300000, guid: fda6772d4f85895498c7053165a4e8bf, type: 3}
-    audioMixerGroup: {fileID: 0}
+    audioMixerGroup: {fileID: -5984405501576422021, guid: 7d960c326abe7fc489bb8046835d03a0, type: 2}
     volume: 1
     pitch: 1
     sendReverb: 0
@@ -2413,7 +2431,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - clipName: Num9
     audioClip: {fileID: 8300000, guid: b877ee8d2cb5c0d4c8e07ad5b10ede66, type: 3}
-    audioMixerGroup: {fileID: 0}
+    audioMixerGroup: {fileID: -5984405501576422021, guid: 7d960c326abe7fc489bb8046835d03a0, type: 2}
     volume: 1
     pitch: 1
     sendReverb: 0
@@ -2422,7 +2440,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - clipName: Num10
     audioClip: {fileID: 8300000, guid: c7a9acb710d2eb2489baf7980ddc67dd, type: 3}
-    audioMixerGroup: {fileID: 0}
+    audioMixerGroup: {fileID: -5984405501576422021, guid: 7d960c326abe7fc489bb8046835d03a0, type: 2}
     volume: 1
     pitch: 1
     sendReverb: 0
@@ -2432,7 +2450,7 @@ MonoBehaviour:
   win:
   - clipName: 
     audioClip: {fileID: 8300000, guid: c2c898de498eaa34ea76bc8143289bb5, type: 3}
-    audioMixerGroup: {fileID: 0}
+    audioMixerGroup: {fileID: 6654427930497349573, guid: 7d960c326abe7fc489bb8046835d03a0, type: 2}
     volume: 1
     pitch: 1
     sendReverb: 0
@@ -2441,7 +2459,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - clipName: 
     audioClip: {fileID: 8300000, guid: 94d89adcfbbc1aa41a7e6dbdb4517e89, type: 3}
-    audioMixerGroup: {fileID: 0}
+    audioMixerGroup: {fileID: 6654427930497349573, guid: 7d960c326abe7fc489bb8046835d03a0, type: 2}
     volume: 1
     pitch: 1
     sendReverb: 0
@@ -3432,6 +3450,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2058942874}
+    - target: {fileID: 1299919529016306541, guid: 57fa0dbbaf3712b478c48018b99742b2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BackButton
+      objectReference: {fileID: 0}
     - target: {fileID: 2707195669002475505, guid: 57fa0dbbaf3712b478c48018b99742b2, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -3557,9 +3579,29 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7103450645074539873, guid: 57fa0dbbaf3712b478c48018b99742b2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7103450645074539873, guid: 57fa0dbbaf3712b478c48018b99742b2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7103450645074539873, guid: 57fa0dbbaf3712b478c48018b99742b2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2058942873}
+    - target: {fileID: 7103450645074539873, guid: 57fa0dbbaf3712b478c48018b99742b2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 11500000, guid: 69d00727b527410418b147a11778cf79, type: 3}
+    - target: {fileID: 7103450645074539873, guid: 57fa0dbbaf3712b478c48018b99742b2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7103450645074539873, guid: 57fa0dbbaf3712b478c48018b99742b2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3681,7 +3723,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1351217930499111671, guid: de08b4ed1ba993d4b835534ea9a2f460, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnPlayButtonPress
+      value: OnTryAgainButtonPress
       objectReference: {fileID: 0}
     - target: {fileID: 1351217930499111671, guid: de08b4ed1ba993d4b835534ea9a2f460, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName

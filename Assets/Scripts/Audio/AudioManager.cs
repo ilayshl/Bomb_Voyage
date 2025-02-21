@@ -95,6 +95,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayKeyNumber(int numKey)
     {
+        Debug.Log(numberTyping.Length); 
         if (numKey < 0 || numKey >= numberTyping.Length)
         {
             Debug.LogWarning($"index out of array bounds");
