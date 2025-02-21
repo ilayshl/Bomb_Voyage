@@ -23,6 +23,11 @@ public class GameManager : MonoBehaviour
         _timeManager = GetComponent<TimeManager>();
     }
 
+    private void Start()
+    {
+        _audioManager.PlaySound("MainMusic");
+    }
+
     /// <summary>
     /// Start a random game, by an index of gameTypes.
     /// </summary>
@@ -40,17 +45,20 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private void ResetGame()
     {
+       
         foreach (Transform transform in activeGame.transform)
         {
             Destroy(transform.gameObject);
         }
     }
 
+
     /// <summary>
     /// On losing a game, exploding everything.
     /// </summary>
     public void OnLose()
     {
+        _audioManager.StopSound("MainMusic");
         _audioManager.PlaySound("BombExplosion");
         var glow = Instantiate(bombExplosion, new Vector2(transform.position.x, transform.position.y + 1.5f), Quaternion.identity);
         _uiManager.EnableLoseScreen(true, 1.5f);
@@ -76,10 +84,22 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void OnPlayButtonPress()
     {
+        _audioManager.PlaySound("Click");
         _uiManager.DisableMainMenu();
         _uiManager.EnableLoseScreen(false);
         InitiateGame();
         _timeManager.NewTimer();
         gamesWon = 0;
     }
+    public void OnTryAgainButtonPress()
+    {
+        _audioManager.PlaySound("MainMusic");
+        _audioManager.PlaySound("Click");
+        _uiManager.DisableMainMenu();
+        _uiManager.EnableLoseScreen(false);
+        InitiateGame();
+        _timeManager.NewTimer();
+    }
+
+
 }
