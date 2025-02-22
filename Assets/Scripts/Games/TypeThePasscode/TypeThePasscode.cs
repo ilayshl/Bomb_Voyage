@@ -1,25 +1,34 @@
+using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TypeThePasscode : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI text;
+    [SerializeField] private TextMeshProUGUI timerText;
+    [SerializeField] private TextMeshProUGUI manualText;
+    [SerializeField] private TextMeshProUGUI hiddenPasscodeText;
     private int passcode; //The passcode generated. this may not change once set.
-    private int typedPasscode;
-
+    private int typedPasscode; //The passcode that the player types.
+    private bool isLost = false;
     private GameManager _gameManager;
+    private AudioManager _audioManager;
+    private UIManager _uiManager;
 
-    private bool gameLost=false;
 
     void Awake()
     {
         _gameManager = FindObjectOfType<GameManager>();
+        _audioManager = _gameManager.GetComponentInChildren<AudioManager>();
+        _uiManager = _gameManager.GetComponent<UIManager>();
     }
 
     void Start()
     {
+        _uiManager.ChangeTimerReference(timerText);
         passcode = GeneratePasscode();
-        text.SetText(passcode.ToString());
+        manualText.SetText(passcode.ToString());
+        hiddenPasscodeText.text = "";
     }
 
     /// <summary>
@@ -38,31 +47,38 @@ public class TypeThePasscode : MonoBehaviour
     /// <param name="number"></param>
     public void PressKeypad(int number)
     {
-        if(!gameLost)
+
+        _audioManager.PlayKeyNumber(number);
+
+        if (!isLost)
         {
-        //PlayOneShot(Sound);
-        typedPasscode = (typedPasscode * 10) + number;
-        if (typedPasscode == passcode)
-        {
-            GetComponent<Animator>().SetTrigger("gameWon");
+            _audioManager.PlayKeyNumber(number);
+            typedPasscode = (typedPasscode * 10) + number;
+            UpdateHiddenPasscode();
+            if (typedPasscode == passcode)
+            {
+                GetComponent<Animator>().SetTrigger("gameWon");
+            }
         }
-        }
-        if (typedPasscode > 999999 && !gameLost)
+        if (typedPasscode > 999999 && !isLost)
         {
-            //PlaySound(Error);
             _gameManager.OnLose();
-            gameLost=true;
+            isLost = true;
         }
 
     }
+
+
 
     /// <summary>
     /// Deletes the last digit from the typed passcode.
     /// </summary>
     public void DeleteDigit()
     {
-        float temporaryPasscode = typedPasscode/10;
+        _audioManager.PlaySound("DeleteDigit_Type");
+        float temporaryPasscode = typedPasscode / 10;
         typedPasscode = (int)temporaryPasscode;
+        UpdateHiddenPasscode();
     }
 
     /// <summary>
@@ -70,6 +86,23 @@ public class TypeThePasscode : MonoBehaviour
     /// </summary>
     public void OnWin()
     {
-        _gameManager.OnWin();
+        _gameManager.OnWin(85);
+    }
+    
+    /// <summary>
+    /// Updates the string to match the amount of digits currently in the typedPasscode.
+    /// </summary>
+    private void UpdateHiddenPasscode()
+    {
+        string hiddenPasscode = typedPasscode.ToString();
+        for (int i = 0; i <= 9; i++)
+        {
+            hiddenPasscode = hiddenPasscode.Replace(i.ToString(), "*");
+        }
+        if(typedPasscode == 0)
+        {
+            hiddenPasscode = "";
+        }
+        hiddenPasscodeText.text = hiddenPasscode;
     }
 }
