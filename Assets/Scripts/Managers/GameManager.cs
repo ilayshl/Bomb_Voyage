@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
         _audioManager.PlaySound("BombExplosion");
         var glow = Instantiate(bombExplosion, new Vector2(transform.position.x, transform.position.y + 1.5f), Quaternion.identity);
         const float DELAY = 1.3f;
-        _uiManager.EnableLoseScreen(true, DELAY);
+        _uiManager.EnableLoseScreen(true, DELAY, score);
         _timeManager.ClearTimer();
         Invoke("ResetGame", DELAY);
         Destroy(glow, DELAY);
@@ -90,9 +90,11 @@ public class GameManager : MonoBehaviour
         _audioManager.PlaySound("Click");
         _uiManager.DisableMainMenu();
         _uiManager.EnableLoseScreen(false);
+        _uiManager.EnableGameplayBackground(true);
         InitiateGame();
         _timeManager.NewTimer();
         gamesWon = 0;
+        score = 0;
     }
     public void OnTryAgainButtonPress()
     {

@@ -10,7 +10,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Transform storyHeader;
     [SerializeField] private Transform creditsHeader;
     [SerializeField] private Transform mainMenuHeader;
+    [SerializeField] private Transform gameplayBackground;
     [SerializeField] private Button backButton;
+    [SerializeField] private TextMeshProUGUI scoreText;
     private TextMeshProUGUI timerText;
     private AudioManager _audioManager;
 
@@ -26,6 +28,11 @@ public class UIManager : MonoBehaviour
     public void SetTimerText(double timer)
     {
         if(timerText!=null){ timerText.SetText(timer.ToString()); }
+    }
+
+    private void SetScoreText(int score)
+    {
+        if(scoreText!=null) { scoreText.SetText(score.ToString()); }
     }
 
     /// <summary>
@@ -45,19 +52,26 @@ public class UIManager : MonoBehaviour
         mainMenuUI.gameObject.SetActive(false);
     }
 
+    public void EnableGameplayBackground(bool value)
+    {
+        gameplayBackground.gameObject.SetActive(value);
+    }
+
     /// <summary>
     /// Calls the Lose screen after 'time' seconds.
     /// </summary>
     /// <param name="time"></param>
-    public void EnableLoseScreen(bool value, float time = 0)
+    public void EnableLoseScreen(bool value, float time = 0, int score = 0)
     {
         StartCoroutine(InvokeLoseScreen(value, time));
+        SetScoreText(score);
     }
 
     public IEnumerator InvokeLoseScreen(bool value, float time)
     {
         yield return new WaitForSeconds(time);
         loseScreenUI.gameObject.SetActive(value);
+        gameplayBackground.gameObject.SetActive(!value);
     }
 
     /// <summary>
