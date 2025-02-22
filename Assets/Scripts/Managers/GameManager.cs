@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
     {
         _audioManager.StopSound("MainMusic");
         _audioManager.PlaySound("BombExplosion");
-        var glow = Instantiate(bombExplosion, new Vector2(transform.position.x, transform.position.y + 1.5f), Quaternion.identity);
+        var glow = Instantiate(bombExplosion);
         const float DELAY = 1.3f;
         _uiManager.EnableLoseScreen(true, DELAY, score);
         _timeManager.ClearTimer();
