@@ -12,6 +12,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Transform mainMenuHeader;
     [SerializeField] private Button backButton;
     private TextMeshProUGUI timerText;
+    private AudioManager _audioManager;
+
+    private void Awake()
+    {
+        _audioManager = GetComponentInChild<AudioManager>();   
+    }
 
     /// <summary>
     /// Sets the text of the timer.
@@ -59,6 +65,8 @@ public class UIManager : MonoBehaviour
     /// </summary>
     public void BackToMainMenu()
     {
+        _audioManager.PlaySound("Click");
+        _audioManager.PlaySound("MainMusic");
         mainMenuUI.gameObject.SetActive(true);
         loseScreenUI.gameObject.SetActive(false);
         mainMenuHeader.gameObject.SetActive(true);
@@ -67,8 +75,23 @@ public class UIManager : MonoBehaviour
         backButton.gameObject.SetActive(false);
     }
 
+    public void BackButton()
+    {
+        _audioManager.PlaySound("Click");
+        mainMenuUI.gameObject.SetActive(true);
+        loseScreenUI.gameObject.SetActive(false);
+        timerText.gameObject.SetActive(false);
+        mainMenuHeader.gameObject.SetActive(true);
+        storyHeader.gameObject.SetActive(false);
+        creditsHeader.gameObject.SetActive(false);
+        backButton.gameObject.SetActive(false);
+    }
+
+
+
     public void Story()
     {
+        _audioManager.PlaySound("Click");
         mainMenuHeader.gameObject.SetActive(false);
         storyHeader.gameObject.SetActive(true);
         backButton.gameObject.SetActive(true);
@@ -76,6 +99,7 @@ public class UIManager : MonoBehaviour
 
     public void Credits()
     {
+        _audioManager.PlaySound("Click");
         mainMenuHeader.gameObject.SetActive(false);
         creditsHeader.gameObject.SetActive(true);
         backButton.gameObject.SetActive(true);
