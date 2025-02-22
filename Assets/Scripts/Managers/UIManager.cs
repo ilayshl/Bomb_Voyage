@@ -16,7 +16,7 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
     {
-        _audioManager = GetComponentInChild<AudioManager>();   
+        _audioManager = GetComponentInChildren<AudioManager>();   
     }
 
     /// <summary>
@@ -80,11 +80,11 @@ public class UIManager : MonoBehaviour
         _audioManager.PlaySound("Click");
         mainMenuUI.gameObject.SetActive(true);
         loseScreenUI.gameObject.SetActive(false);
-        timerText.gameObject.SetActive(false);
         mainMenuHeader.gameObject.SetActive(true);
         storyHeader.gameObject.SetActive(false);
         creditsHeader.gameObject.SetActive(false);
         backButton.gameObject.SetActive(false);
+        if(timerText!=null) { timerText.gameObject.SetActive(false); }
     }
 
 

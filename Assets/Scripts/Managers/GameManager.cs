@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject canvas;
     [SerializeField] private GameObject activeGame;
     [SerializeField] private GameObject bombExplosion;
+    private int score;
     private UIManager _uiManager;
     private AudioManager _audioManager;
     private ScoreManager _scoreManager;
@@ -61,22 +62,24 @@ public class GameManager : MonoBehaviour
         _audioManager.StopSound("MainMusic");
         _audioManager.PlaySound("BombExplosion");
         var glow = Instantiate(bombExplosion, new Vector2(transform.position.x, transform.position.y + 1.5f), Quaternion.identity);
-        _uiManager.EnableLoseScreen(true, 1.5f);
+        const float DELAY = 1.3f;
+        _uiManager.EnableLoseScreen(true, DELAY);
         _timeManager.ClearTimer();
-        Invoke("ResetGame", 1.5f);
-        Destroy(glow, 1.5f);
+        Invoke("ResetGame", DELAY);
+        Destroy(glow, DELAY);
     }
 
     /// <summary>
     /// Resets the game and starts another one in succession.
     /// </summary>
-    public void OnWin()
+    public void OnWin(int scoreAddition)
     {
         _audioManager.PlayRandomWin();
         ResetGame();
         InitiateGame();
         _timeManager.AddTime();
         gamesWon++;
+        score+=scoreAddition;
     }
 
     /// <summary>
@@ -100,6 +103,4 @@ public class GameManager : MonoBehaviour
         InitiateGame();
         _timeManager.NewTimer();
     }
-
-
 }

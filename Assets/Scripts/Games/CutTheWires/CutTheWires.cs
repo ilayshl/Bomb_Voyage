@@ -167,6 +167,6 @@ public class CutTheWires : MonoBehaviour
     /// </summary>
     public void OnWin()
     {
-        _gameManager.OnWin();
+        _gameManager.OnWin(100);
     }
 }

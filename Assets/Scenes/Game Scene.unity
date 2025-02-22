@@ -1121,6 +1121,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6948246378270166244, guid: 57fa0dbbaf3712b478c48018b99742b2, type: 3}
+      propertyPath: m_text
+      value: 'Shaked Levi- Art & Design
+
+        Ilay Shlomo- Programming & Game
+        Design
+
+        Amir Pepper- Sound Recording, Editing, Code Implementation'
+      objectReference: {fileID: 0}
     - target: {fileID: 7103450645074539873, guid: 57fa0dbbaf3712b478c48018b99742b2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2

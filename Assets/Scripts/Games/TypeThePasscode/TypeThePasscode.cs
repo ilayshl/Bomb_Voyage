@@ -86,7 +86,7 @@ public class TypeThePasscode : MonoBehaviour
     /// </summary>
     public void OnWin()
     {
-        _gameManager.OnWin();
+        _gameManager.OnWin(85);
     }
     
     /// <summary>
