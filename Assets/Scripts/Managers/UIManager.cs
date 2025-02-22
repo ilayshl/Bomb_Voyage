@@ -119,4 +119,9 @@ public class UIManager : MonoBehaviour
         backButton.gameObject.SetActive(true);
     }
 
+    public void QuitButton()
+    {
+        Application.Quit();
+    }
+
 }

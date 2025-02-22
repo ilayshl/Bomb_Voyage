@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Game_Jam_Bombs_Game.sln"
+    "dotnet.defaultSolution": "Bomb Voyage.sln"
 }

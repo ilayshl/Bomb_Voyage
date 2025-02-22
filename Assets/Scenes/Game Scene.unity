@@ -1078,66 +1078,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Menu UI
       objectReference: {fileID: 0}
-    - target: {fileID: 108588184030161808, guid: 57fa0dbbaf3712b478c48018b99742b2, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 369416689464492715, guid: 57fa0dbbaf3712b478c48018b99742b2, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 566863496795738861, guid: 57fa0dbbaf3712b478c48018b99742b2, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1299919529016306541, guid: 57fa0dbbaf3712b478c48018b99742b2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2058942874}
-    - target: {fileID: 1299919529016306541, guid: 57fa0dbbaf3712b478c48018b99742b2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BackButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 2707195669002475505, guid: 57fa0dbbaf3712b478c48018b99742b2, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 2486508076708554110, guid: 57fa0dbbaf3712b478c48018b99742b2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2058942874}
     - target: {fileID: 3896224085256713239, guid: 57fa0dbbaf3712b478c48018b99742b2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2058942874}
-    - target: {fileID: 5521309323334530308, guid: 57fa0dbbaf3712b478c48018b99742b2, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.01725054
-      objectReference: {fileID: 0}
-    - target: {fileID: 5521309323334530308, guid: 57fa0dbbaf3712b478c48018b99742b2, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.01725054
-      objectReference: {fileID: 0}
-    - target: {fileID: 5521309323334530308, guid: 57fa0dbbaf3712b478c48018b99742b2, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.01725054
-      objectReference: {fileID: 0}
-    - target: {fileID: 5521309323334530308, guid: 57fa0dbbaf3712b478c48018b99742b2, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9992722
-      objectReference: {fileID: 0}
-    - target: {fileID: 5521309323334530308, guid: 57fa0dbbaf3712b478c48018b99742b2, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.03814598
-      objectReference: {fileID: 0}
-    - target: {fileID: 5521309323334530308, guid: 57fa0dbbaf3712b478c48018b99742b2, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 2.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5521309323334530308, guid: 57fa0dbbaf3712b478c48018b99742b2, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -3.59
-      objectReference: {fileID: 0}
-    - target: {fileID: 5521309323334530308, guid: 57fa0dbbaf3712b478c48018b99742b2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -4.372
-      objectReference: {fileID: 0}
     - target: {fileID: 6470057659373669412, guid: 57fa0dbbaf3712b478c48018b99742b2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1222,64 +1174,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6948246378270166244, guid: 57fa0dbbaf3712b478c48018b99742b2, type: 3}
-      propertyPath: m_text
-      value: 'Shaked Levi- Design and Art, Main Theme Composing
-
-        Amir Pepper-
-        Sound Recording, Editing & Code Implementation
-
-        Ilay Shlomo- Programming
-        & Game Design'
-      objectReference: {fileID: 0}
-    - target: {fileID: 6948246378270166244, guid: 57fa0dbbaf3712b478c48018b99742b2, type: 3}
-      propertyPath: m_fontSize
-      value: 19.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6948246378270166244, guid: 57fa0dbbaf3712b478c48018b99742b2, type: 3}
-      propertyPath: m_fontStyle
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6948246378270166244, guid: 57fa0dbbaf3712b478c48018b99742b2, type: 3}
-      propertyPath: m_wordSpacing
-      value: -9.24
-      objectReference: {fileID: 0}
-    - target: {fileID: 6948246378270166244, guid: 57fa0dbbaf3712b478c48018b99742b2, type: 3}
-      propertyPath: m_enableAutoSizing
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6948246378270166244, guid: 57fa0dbbaf3712b478c48018b99742b2, type: 3}
-      propertyPath: m_overrideHtmlColors
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6948246378270166244, guid: 57fa0dbbaf3712b478c48018b99742b2, type: 3}
-      propertyPath: m_enableVertexGradient
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7103450645074539873, guid: 57fa0dbbaf3712b478c48018b99742b2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7103450645074539873, guid: 57fa0dbbaf3712b478c48018b99742b2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7103450645074539873, guid: 57fa0dbbaf3712b478c48018b99742b2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2058942873}
-    - target: {fileID: 7103450645074539873, guid: 57fa0dbbaf3712b478c48018b99742b2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 11500000, guid: 69d00727b527410418b147a11778cf79, type: 3}
-    - target: {fileID: 7103450645074539873, guid: 57fa0dbbaf3712b478c48018b99742b2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7103450645074539873, guid: 57fa0dbbaf3712b478c48018b99742b2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: GameManager, Assembly-CSharp
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
