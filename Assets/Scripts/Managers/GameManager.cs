@@ -104,5 +104,7 @@ public class GameManager : MonoBehaviour
         _uiManager.EnableLoseScreen(false);
         InitiateGame();
         _timeManager.NewTimer();
+        gamesWon = 0;
+        score = 0;
     }
 }
